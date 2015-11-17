@@ -8,26 +8,25 @@ var boxStyle = {
 };
 
 var Box = React.createClass({
-  /**
-   * Render a HTML button
-   * @return {ReactElement}
-   */
    
    getInitialState: function(){
-		return {value : this.props.initialValue};
+       return {value: this.props.initialValue};
    },
    
-   handleClick : function() {
-	this.setState({value: this.state.value + 1});
+   componentWillMount : function() {
+	setInterval(this.updateTime, 300);
    },
    
-  'render': function onRender () {
+   updateTime : function(){
+	if(this.state.value == 'X') this.setState({value : 'O'});
+	else this.setState({value : 'X'});
+   },
+
+   'render': function onRender(){
     return (
-	//<div onClick={this.handleClick}>
       <button style={boxStyle}>{this.state.value}</button>
-	//</div>
     );
   }
 });
 
-React.render(<Box initialValue = 'X'/>, document.body);
+React.render(<Box initialValue={'X'}/>, document.body);
