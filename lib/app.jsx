@@ -7,6 +7,20 @@ var boxStyle = {
 	width: '100px'
 };
 
+var Row = React.createClass({
+	render : function(){
+		return (
+		<div>
+			<tr>
+				<td><Box initialValue={'X'} /></td>
+				<td><Box initialValue={'X'} /></td>
+				<td><Box initialValue={'X'} /></td>
+			</tr>
+		</div>
+		)
+	}
+});
+
 var Box = React.createClass({
    
    getInitialState: function(){
@@ -38,11 +52,9 @@ var Box = React.createClass({
 
    'render': function onRender(){
     return (
-	<div onClick={this.handleClick}>
-      <button style={boxStyle}>{this.state.value}</button>
-	</div>
+      <button style={boxStyle} onClick={this.handleClick}>{this.state.value}</button>
     );
   }
 });
 
-React.render(<Box initialValue={'X'}/>, document.body);
+React.render(<Row initialValue={'X'}/>, document.body);
