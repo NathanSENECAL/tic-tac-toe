@@ -3,8 +3,8 @@
 var React = require('react');
 
 var boxStyle = {
-	height: 100px,
-	width: 100px
+	height: '100px',
+	width: '100px'
 };
 
 var Box = React.createClass({
