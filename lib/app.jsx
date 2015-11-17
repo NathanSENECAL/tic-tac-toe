@@ -12,9 +12,9 @@ var Row = React.createClass({
 		return (
 		<div>
 			<tr>
-				<td><Box initialValue={'X'} /></td>
-				<td><Box initialValue={'X'} /></td>
-				<td><Box initialValue={'X'} /></td>
+				<td><Box initialValue={'-'} /></td>
+				<td><Box initialValue={'-'} /></td>
+				<td><Box initialValue={'-'} /></td>
 			</tr>
 		</div>
 		)
